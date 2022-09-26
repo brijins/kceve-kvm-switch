@@ -1,0 +1,46 @@
+kvmd:
+    streamer:
+        forever: true
+        cmd_append: [--slowdown]
+
+    gpio:
+        drivers:
+            display1:
+                type: cmd
+                cmd: [/usr/bin/sudo, /opt/bin/switch.py, 1]
+            display2:
+                type: cmd
+                cmd: [/usr/bin/sudo, /opt/bin/switch.py, 2]
+            display3:
+                type: cmd
+                cmd: [/usr/bin/sudo, /opt/bin/switch.py, 3]
+            display4:
+                type: cmd
+                cmd: [/usr/bin/sudo, /opt/bin/switch.py, 4]
+        scheme:
+            display1_button:
+                driver: display1
+                pin: 0
+                mode: output
+                switch: false
+            display2_button:
+                driver: display2
+                pin: 0
+                mode: output
+                switch: false
+            display3_button:
+                driver: display3
+                pin: 0
+                mode: output
+                switch: false
+            display4_button:
+                driver: display4
+                pin: 0
+                mode: output
+                switch: false
+        view:
+            table:
+                - ["display1_button|Tower1 NAS - Display1"]
+                - ["display2_button|Proxmox Server - Display2"]
+                - ["display3_button|pfSense - Display3"]
+                - ["display4_button|Hikvision NVR - Display4"]
