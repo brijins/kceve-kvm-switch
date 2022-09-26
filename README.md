@@ -1,4 +1,4 @@
-The code and configguration I used to setup KCEVE kvm switch with pikvm. 
+The code and configuration I used to setup KCEVE kvm switch with pikvm. 
 
 Please feel free to use. 
 
